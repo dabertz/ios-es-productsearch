@@ -10,6 +10,11 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
 
+    //MARK: Properties
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

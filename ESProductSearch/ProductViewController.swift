@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProductViewController.swift
 //  ESProductSearch
 //
 //  Created by Jolly Crisostomo on 2019/05/01.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProductViewController: UIViewController {
 
     //MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!

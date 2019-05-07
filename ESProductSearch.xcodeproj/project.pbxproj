@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73C1630BB1AFB21E9475962F /* Pods_ESProductSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515AA5FEAF6E4DA2064F673E /* Pods_ESProductSearch.framework */; };
+		E005A53E2280211B00BB62D3 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005A53D2280211B00BB62D3 /* RatingControl.swift */; };
+		E005A54022803C4800BB62D3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005A53F22803C4800BB62D3 /* Product.swift */; };
+		E005A54222803EB100BB62D3 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005A54122803EB100BB62D3 /* ProductTableViewCell.swift */; };
+		E005A5442280485C00BB62D3 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005A5432280485C00BB62D3 /* ProductTableViewController.swift */; };
 		E086B54622789B4900815BF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E086B54522789B4900815BF1 /* AppDelegate.swift */; };
-		E086B54822789B4900815BF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E086B54722789B4900815BF1 /* ViewController.swift */; };
+		E086B54822789B4900815BF1 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E086B54722789B4900815BF1 /* ProductViewController.swift */; };
 		E086B54B22789B4900815BF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E086B54922789B4900815BF1 /* Main.storyboard */; };
 		E086B54D22789B4B00815BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E086B54C22789B4B00815BF1 /* Assets.xcassets */; };
 		E086B55022789B4B00815BF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E086B54E22789B4B00815BF1 /* LaunchScreen.storyboard */; };
@@ -26,9 +31,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		515AA5FEAF6E4DA2064F673E /* Pods_ESProductSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESProductSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F065998FB47E059B42F753F /* Pods-ESProductSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESProductSearch.release.xcconfig"; path = "Target Support Files/Pods-ESProductSearch/Pods-ESProductSearch.release.xcconfig"; sourceTree = "<group>"; };
+		7B74F5C78FD6BF97921C0E6D /* Pods-ESProductSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESProductSearch.debug.xcconfig"; path = "Target Support Files/Pods-ESProductSearch/Pods-ESProductSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		E005A53D2280211B00BB62D3 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		E005A53F22803C4800BB62D3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E005A54122803EB100BB62D3 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		E005A5432280485C00BB62D3 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
 		E086B54222789B4900815BF1 /* ESProductSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESProductSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E086B54522789B4900815BF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E086B54722789B4900815BF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E086B54722789B4900815BF1 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		E086B54A22789B4900815BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E086B54C22789B4B00815BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E086B54F22789B4B00815BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73C1630BB1AFB21E9475962F /* Pods_ESProductSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +69,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D3D4771E420D7A1DF18A226 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				515AA5FEAF6E4DA2064F673E /* Pods_ESProductSearch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E086B53922789B4900815BF1 = {
 			isa = PBXGroup;
 			children = (
 				E086B54422789B4900815BF1 /* ESProductSearch */,
 				E086B55922789B4B00815BF1 /* ESProductSearchTests */,
 				E086B54322789B4900815BF1 /* Products */,
+				E3F46CBF602C7B08D3188496 /* Pods */,
+				9D3D4771E420D7A1DF18A226 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,11 +101,15 @@
 			isa = PBXGroup;
 			children = (
 				E086B54522789B4900815BF1 /* AppDelegate.swift */,
-				E086B54722789B4900815BF1 /* ViewController.swift */,
+				E086B54722789B4900815BF1 /* ProductViewController.swift */,
 				E086B54922789B4900815BF1 /* Main.storyboard */,
+				E005A5432280485C00BB62D3 /* ProductTableViewController.swift */,
+				E005A54122803EB100BB62D3 /* ProductTableViewCell.swift */,
 				E086B54C22789B4B00815BF1 /* Assets.xcassets */,
 				E086B54E22789B4B00815BF1 /* LaunchScreen.storyboard */,
 				E086B55122789B4B00815BF1 /* Info.plist */,
+				E005A53D2280211B00BB62D3 /* RatingControl.swift */,
+				E005A53F22803C4800BB62D3 /* Product.swift */,
 			);
 			path = ESProductSearch;
 			sourceTree = "<group>";
@@ -96,6 +123,15 @@
 			path = ESProductSearchTests;
 			sourceTree = "<group>";
 		};
+		E3F46CBF602C7B08D3188496 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B74F5C78FD6BF97921C0E6D /* Pods-ESProductSearch.debug.xcconfig */,
+				6F065998FB47E059B42F753F /* Pods-ESProductSearch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E086B55F22789B4B00815BF1 /* Build configuration list for PBXNativeTarget "ESProductSearch" */;
 			buildPhases = (
+				29E1279C46DC9E470D311032 /* [CP] Check Pods Manifest.lock */,
 				E086B53E22789B4900815BF1 /* Sources */,
 				E086B53F22789B4900815BF1 /* Frameworks */,
 				E086B54022789B4900815BF1 /* Resources */,
+				90E1E388F879F2FC9CD6FBA7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,12 +230,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29E1279C46DC9E470D311032 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ESProductSearch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90E1E388F879F2FC9CD6FBA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ESProductSearch/Pods-ESProductSearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ESProductSearch/Pods-ESProductSearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ESProductSearch/Pods-ESProductSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E086B53E22789B4900815BF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E086B54822789B4900815BF1 /* ViewController.swift in Sources */,
+				E086B54822789B4900815BF1 /* ProductViewController.swift in Sources */,
+				E005A54022803C4800BB62D3 /* Product.swift in Sources */,
+				E005A54222803EB100BB62D3 /* ProductTableViewCell.swift in Sources */,
+				E005A53E2280211B00BB62D3 /* RatingControl.swift in Sources */,
+				E005A5442280485C00BB62D3 /* ProductTableViewController.swift in Sources */,
 				E086B54622789B4900815BF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,10 +442,13 @@
 		};
 		E086B56022789B4B00815BF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B74F5C78FD6BF97921C0E6D /* Pods-ESProductSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q7RGW936LS;
 				INFOPLIST_FILE = ESProductSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,10 +462,13 @@
 		};
 		E086B56122789B4B00815BF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F065998FB47E059B42F753F /* Pods-ESProductSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q7RGW936LS;
 				INFOPLIST_FILE = ESProductSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
