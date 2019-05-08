@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-ESProductSearch/Pods-ESProductSearch-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

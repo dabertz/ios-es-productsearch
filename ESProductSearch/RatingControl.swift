@@ -12,7 +12,7 @@ import UIKit
     
     //MARK: Properties
     private var ratingButtons = [UIButton]()
-    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+    @IBInspectable var starSize: CGSize = CGSize(width: 32.0, height: 32.0) {
         didSet {
             setupButtons()
         }
@@ -55,7 +55,7 @@ import UIKit
         
         ratingButtons.removeAll()
         
-        for _ in 0..<starCount {
+        for _ in 0..<5 {
             // Create the button
             let button = UIButton()
             // Set the buttons images

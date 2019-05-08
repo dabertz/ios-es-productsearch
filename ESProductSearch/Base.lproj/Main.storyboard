@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="M0h-5D-Xai">
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="M0h-5D-Xai">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -32,26 +32,35 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-49-5rR">
-                                            <rect key="frame" x="-16" y="-20" width="130" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="114" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvH-X8-usv">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvH-X8-usv">
                                             <rect key="frame" x="122" y="0.0" width="246" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ptV-o7-92K" customClass="RatingControl" customModule="ESProductSearch" customModuleProvider="target">
-                                            <rect key="frame" x="123" y="40" width="252" height="44"/>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ptV-o7-92K" customClass="RatingControl" customModule="ESProductSearch">
+                                            <rect key="frame" x="123" y="52" width="175" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siB-Lf-AFN">
+                                            <rect key="frame" x="123" y="23" width="245" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="photoImageView" destination="LGc-49-5rR" id="MEx-nu-G5y"/>
+                                    <outlet property="priceLabel" destination="siB-Lf-AFN" id="Ko1-aC-lTe"/>
                                     <outlet property="ratingControl" destination="ptV-o7-92K" id="qq6-VL-1zn"/>
                                     <outlet property="titleLabel" destination="yvH-X8-usv" id="ORD-nO-ema"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="kyN-T0-8Tm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,6 +70,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="BBU-0w-5oI"/>
+                    <connections>
+                        <outlet property="searchBar" destination="M0h-5D-Xai" id="5L7-g8-Scf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSr-Z8-yVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,56 +86,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5b9-Ga-Ahc">
-                                <rect key="frame" x="0.0" y="20" width="375" height="496"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTs-l0-44D">
+                                <rect key="frame" x="2" y="84" width="371" height="492"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPw-jf-yQA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuE-mj-M51">
                                         <rect key="frame" x="0.0" y="0.0" width="33.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJO-2r-h8O">
-                                        <rect key="frame" x="0.0" y="30.5" width="39" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E8f-CQ-rEt">
+                                        <rect key="frame" x="0.0" y="28.5" width="371" height="406.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="s7W-il-mfS">
+                                                <rect key="frame" x="25.5" y="0.0" width="320" height="320"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="s7W-il-mfS" secondAttribute="height" multiplier="1:1" id="sap-Dk-ZcK"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMY-xB-Oif">
+                                                <rect key="frame" x="166" y="328" width="39" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lxM-kR-zLA" customClass="RatingControl" customModule="ESProductSearch" customModuleProvider="target">
+                                                <rect key="frame" x="105.5" y="356.5" width="160" height="50"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDR-Y1-C16">
+                                        <rect key="frame" x="0.0" y="443" width="76" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CategoryValue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ah-Md-9Hx">
+                                        <rect key="frame" x="0.0" y="471.5" width="112.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nUa-Go-b8l">
-                                        <rect key="frame" x="0.0" y="61" width="375" height="435"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="tCa-85-XyF">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="tCa-85-XyF" secondAttribute="height" multiplier="1:1" id="B3n-CX-aVh"/>
-                                                </constraints>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9h-7l-MZc" customClass="RatingControl" customModule="ESProductSearch" customModuleProvider="target">
-                                                <rect key="frame" x="61.5" y="385" width="252" height="50"/>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="E8f-CQ-rEt" secondAttribute="trailing" id="bzo-b5-Psu"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5b9-Ga-Ahc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4rF-te-USL"/>
-                            <constraint firstItem="5b9-Ga-Ahc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="PoW-9t-FfU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5b9-Ga-Ahc" secondAttribute="trailing" id="SWg-i5-S0s"/>
+                            <constraint firstItem="xTs-l0-44D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="4az-7k-1Ay"/>
+                            <constraint firstItem="xTs-l0-44D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6Xo-cq-LO5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xTs-l0-44D" secondAttribute="trailing" constant="2" id="pFv-t4-zQW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="f85-Dh-4yK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fcT-hc-ti3">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="2fa-Yy-HWu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="photoImageView" destination="tCa-85-XyF" id="5al-L5-4Ru"/>
-                        <outlet property="priceLabel" destination="DJO-2r-h8O" id="Yhu-FK-kcm"/>
-                        <outlet property="ratingControl" destination="H9h-7l-MZc" id="VUi-nS-UDc"/>
-                        <outlet property="titleLabel" destination="zPw-jf-yQA" id="xy7-4J-tiK"/>
+                        <outlet property="categoryLabel" destination="5Ah-Md-9Hx" id="VLo-Ie-vLj"/>
+                        <outlet property="photoImageView" destination="s7W-il-mfS" id="uX2-jC-w2K"/>
+                        <outlet property="priceLabel" destination="uMY-xB-Oif" id="a8g-2D-1C8"/>
+                        <outlet property="ratingControl" destination="lxM-kR-zLA" id="wdV-Jb-ib5"/>
+                        <outlet property="titleLabel" destination="wuE-mj-M51" id="X3u-oI-J9J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="44.527736131934034"/>
+            <point key="canvasLocation" x="1524" y="44.527736131934034"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JuY-Je-v4e">
